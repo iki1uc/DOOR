@@ -1,29 +1,23 @@
-# API – Durchlassachse · iki1uc
+# DOOR – Übergangsmodul des iki1uc-Systems
 
 ## Zweck
-API ist die Durchlassachse des iki1uc‑Systems.
-Es leitet die Achsen IQ, QI, EVO, UPD, UPG, BIOS und CALC weiter.
+DOOR ist ein Übergangsmodul, das zwischen Kontrollinstanz (DOO) und Durchlassachse (API) arbeitet.  
+Es erzeugt stabile oder temporäre Übergänge, abhängig vom Systemzustand.
 
 ## Struktur
-- NAME: API
-- ID: P01
-- Station: S02
-- Dimension: D5
-- Modus: enable (aktiv, durchlassend)
+- Modul: DOOR
+- Typ: Passage
+- Zustand: dynamisch
+- Kontrolle: optional (über DOO)
+- Übergang: stabil oder tmp
 
-## Rolle
-API verbindet ANKER mit allen aktiven Systemmodulen.
-Es ist die aktive Achse zwischen Stabilisation (D4) und Transfer (REAL/ALLout).
+## Funktionen
+- Übergang erzeugen, wo keiner ist (Mapping)
+- API-Durchlass aktivieren
+- DOO-Kontrolle nutzen oder umgehen
+- GEO/PHYSIK-Schichtwechsel simulieren
 
-## Bindungen
-- ANKER (S01)
-- AXI
-- 6d
-- 360
-- 100
-- 213 (REAL)
-- ALLout
-
-## Status
-STATE = STABIL  
-READY = 100%
+## Dateien
+- API.raw – Rohdefinitionen
+- API.system.js – Funktionslogik
+- ID.html – Modul-Identität
